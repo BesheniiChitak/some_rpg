@@ -1,7 +1,7 @@
-name: FarmGame
+name: this_is_just_some_boring_rpg_with_nothing_to_see_here
 main: plugin.artofluxis.project.Plugin
 version: "1.0"
-api-version: 1.20
+api-version: 1.21
 
 libraries:
   - org.jetbrains.kotlin:kotlin-stdlib:2.0.21
