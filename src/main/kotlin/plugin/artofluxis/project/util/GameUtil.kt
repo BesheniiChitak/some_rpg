@@ -3,16 +3,14 @@ package plugin.artofluxis.project.util
 import kotlinx.serialization.Serializable
 import net.minecraft.core.BlockPos
 import net.minecraft.network.protocol.game.ClientboundBlockDestructionPacket
-import net.minecraft.server.level.ServerLevel
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.world.level.block.state.BlockState
 import org.bukkit.Bukkit
 import org.bukkit.Location
 import org.bukkit.World
 import org.bukkit.block.Block
-import org.bukkit.craftbukkit.v1_20_R3.CraftWorld
-import org.bukkit.craftbukkit.v1_20_R3.block.CraftBlock
-import org.bukkit.craftbukkit.v1_20_R3.entity.CraftPlayer
+import org.bukkit.craftbukkit.entity.CraftPlayer
+import org.bukkit.craftbukkit.block.CraftBlock
 import org.bukkit.entity.Player
 import kotlin.math.max
 import kotlin.math.min
@@ -28,10 +26,6 @@ val Player.nms: ServerPlayer
 // Расширение для получения NMS-состояния блока из Bukkit-блока
 val Block.nms: BlockState
     get() = (this as CraftBlock).nms
-
-// Расширение для получения NMS-мира из Bukkit-мира
-val World.nms: ServerLevel
-    get() = (this as CraftWorld).handle
 
 /**
  * Функция для отображения анимации разрушения блока в определённой позиции.

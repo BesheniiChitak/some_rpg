@@ -7,6 +7,5 @@ import org.bukkit.event.player.PlayerJoinEvent
 object GlobalListener : Listener {
     @EventHandler
     fun playerJoin(event: PlayerJoinEvent) {
-
     }
 }
