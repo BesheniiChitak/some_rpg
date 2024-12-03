@@ -9,14 +9,14 @@ import java.util.UUID
 
 object StatsLoad {
 
-    private val statsfolder = File(plugin.dataFolder, "variables")
-    private val pluginfolder = plugin.dataFolder
+    private val pluginFolder = plugin.dataFolder
+    private val statsFolder = File(pluginFolder, "variables")
 
-    private val saveFile = File(statsfolder, "player_data.json")
+    private val saveFile = File(statsFolder, "player_data.json")
 
     fun load() {
-        if (!pluginfolder.exists()) pluginfolder.mkdirs()
-        if (!statsfolder.exists()) statsfolder.mkdirs()
+        if (!statsFolder.exists()) pluginFolder.mkdirs()
+        if (!statsFolder.exists()) statsFolder.mkdirs()
         else {
             if (!saveFile.exists()) saveFile.createNewFile()
             playersStats = Json.decodeFromString<HashMap<UUID, PlayerStats>>(saveFile.readText())

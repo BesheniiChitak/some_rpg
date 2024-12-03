@@ -11,6 +11,7 @@ import java.util.UUID
  crit damage
  crit chance
  health
+ oops forgor regen
 */
 /*
     current plan: (you can make changes wherever you see fit)
@@ -27,35 +28,40 @@ class PlayerStats(
     var walkSpeedLVL: Int,
     var critDamageLVL: Int,
     var critChanceLVL: Int,
-    var healthLVL: Int
+    var healthLVL: Int,
+    var regenLVL: Int
 ) {
     val damage: Double
         get() {
-            return damageLVL*0.2+3
+            return damageLVL * 0.2 + 3
         }
     val defense: Double
         get() {
-            return TODO()
+            return defenseLVL * 0.5
         }
     val atkSpeed: Double
         get() {
-            return TODO()
+            return 0.02 * atkSpeedLVL
         }
     val walkSpeed: Double
         get() {
-            return TODO()
+            return 0.0025 * walkSpeedLVL
         }
     val critDamage: Double
         get() {
-            return TODO()
+            return (5 * critDamageLVL).toDouble()
         }
     val critChance: Double
         get() {
-            return TODO()
+            return 0.5 * critChanceLVL
         }
     val maxHealth: Double
         get() {
-            return TODO()
+            return healthLVL.toDouble()
+        }
+    val regen: Double
+        get() {
+            return regenLVL.toDouble()
         }
 }
 
