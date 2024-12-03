@@ -43,6 +43,7 @@ fun Location.setBlockDestruction(source: Player, progress: Int, showToEveryone: 
 
     // Для каждого игрока отправляем пакет для отображения разрушения блока
     players.forEach { player ->
+        player.uniqueId
         player.nms.connection.send(
             ClientboundBlockDestructionPacket(
                 hash, // Используем хеш для идентификации разрушения

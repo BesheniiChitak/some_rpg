@@ -1,6 +1,8 @@
 package plugin.artofluxis.project
 
 import plugin.artofluxis.project.util.other.loadConfig
+import plugin.artofluxis.project.StatsLoad.load
+import plugin.artofluxis.project.StatsLoad.save
 import org.bukkit.Bukkit
 import org.bukkit.plugin.java.JavaPlugin
 import java.io.File
@@ -22,10 +24,10 @@ class Plugin : JavaPlugin() {
 
         server.commandMap.getCommand("plugins")?.permission = "*"
 
-        // load()
+        load()
     }
 
     override fun onDisable() {
-        // save()
+        save()
     }
 }
